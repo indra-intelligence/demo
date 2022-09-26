@@ -1,12 +1,13 @@
+import 'semantic-ui-css/semantic.min.css'
+
 import React, {Component} from 'react'
+import { useNavigate } from 'react-router-dom'
+import TinderCard from 'react-tinder-card'
+
 import {Button, Icon, Image, Modal, Grid, Transition, Header, Segment, Label, Message} from 'semantic-ui-react'
-import DataService from "./services/data-service";
-import TinderCard from './react-tinder-card'
-import { useNavigate } from 'react-router-dom';
-import 'semantic-ui-css/semantic.min.css';
+import DataService from "./services/data-service"
 
-
-let ds = new DataService();
+let ds = new DataService()
 
 let SITE_NAME = "http://localhost:3000";
 let data1 = [
@@ -94,7 +95,7 @@ class SwipeViewModal extends Component {
         this.loadProducts = this.loadProducts.bind(this);
         this.productUpvote = this.productUpvote.bind(this);
         this.productDownVote = this.productDownVote.bind(this);
-    
+
         this.onSwipe = this.onSwipe.bind(this);
         this.cardGallery = this.cardGallery.bind(this);
 
