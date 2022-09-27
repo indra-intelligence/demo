@@ -125,9 +125,9 @@ class SwipeViewModal extends Component {
     onSwipe = (direction) => {
         console.log("swiped " + direction)
 
-        if (direction == 'right') {
+        if (direction === 'right') {
             this.productUpvote();
-        } else if (direction == 'left') {
+        } else if (direction === 'left') {
             this.productDownVote();
         }
 
@@ -142,8 +142,6 @@ class SwipeViewModal extends Component {
 
 
     cardGallery = () => {
-        let self = this;
-
         if(this.state.products != null) {
             const list = this.state.products.map((product) =>
                 <div>
