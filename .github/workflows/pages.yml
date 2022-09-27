@@ -24,7 +24,8 @@ jobs:
   deploy:
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      # url: ${{ steps.deployment.outputs.page_url }}
+      url: 'https://indra-intelligence.github.io/demo'
     runs-on: ubuntu-latest
     strategy:
       matrix:
