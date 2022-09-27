@@ -77,7 +77,7 @@ let data1 = [
     },
     {
         "product_id": 1,
-        "category": "Athelete: Nascar",
+        "category": "Athlete: Nascar",
         "name": "Chase Elliot",
         "product_attributes": {
             "color": "black",
