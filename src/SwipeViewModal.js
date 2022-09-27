@@ -9,7 +9,8 @@ import DataService from "./services/data-service"
 
 let ds = new DataService()
 
-let SITE_NAME = "http://localhost:3000";
+let SITE_NAME = process.env.REACT_APP_API_BASE_URL
+
 let data1 = [
     {
         "product_id": 8,
