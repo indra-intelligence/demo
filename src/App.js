@@ -5,9 +5,7 @@ import SwipeViewModal from "./SwipeViewModal";
 
 function App() {
   return (
-    <div className="App">
-        <SwipeViewModal />
-    </div>
+    <SwipeViewModal />
   );
 }
 
