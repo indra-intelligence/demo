@@ -4,12 +4,14 @@ import React, {Component} from 'react'
 import { useNavigate } from 'react-router-dom'
 import TinderCard from 'react-tinder-card'
 
-import {Button, Icon, Image, Modal, Grid, Transition, Header, Segment, Label, Message} from 'semantic-ui-react'
+import {Icon, Image, Modal, Grid, Transition, Header, Segment, Label, Message} from 'semantic-ui-react'
 import DataService from "./services/data-service"
 
 let ds = new DataService()
 
 let SITE_NAME = process.env.REACT_APP_API_BASE_URL
+
+console.log(`BASE_URL :${SITE_NAME}`)
 
 let data1 = [
     {
@@ -145,7 +147,7 @@ class SwipeViewModal extends Component {
     cardGallery = () => {
         if(this.state.products != null) {
             const list = this.state.products.map((product) =>
-                <div>
+                <div key={product.product_id}>
                     <Segment inverted>
                         <Header as='h4' inverted color='black'>
                           {product.category}
@@ -153,7 +155,7 @@ class SwipeViewModal extends Component {
                     </Segment>
                     <TinderCard onSwipe={this.onSwipe} flickOnSwipe={false}>
                         <Image rounded wrapped src={product.image_link} />
-                        <Label attached='bottom' clear>{product.name}</Label>
+                        <Label attached='bottom'>{product.name}</Label>
                     </TinderCard>
 
                 </div>
@@ -181,10 +183,10 @@ class SwipeViewModal extends Component {
 
         return (
             <div className="homepage-modal">
-                <h1> Hey You ! </h1>
-                <p> Take This Quiz To Get 15% Off Your Next Order </p>
-                <p> hi </p>
-                <Modal trigger={<Button>Let's Do It</Button>} size={'mini'} rounded-corners centered={false} onOpen={() => this.loadProducts()}>
+                <h1 className='quiz-header'>Quiz:</h1>
+                <p className='quiz-header'>Who's Your Match?</p>
+                <p className='quiz-body'>Take the quiz for a chance to win!</p>
+                <Modal trigger={<button className={'quiz-button'}>Let's Do It</button>} size={'mini'} onOpen={() => this.loadProducts()}>
                     <Modal.Content image>
                         <Grid textAlign='center' verticalAlign='middle' columns={1}>
                             <Grid.Row>
